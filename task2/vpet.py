@@ -33,26 +33,14 @@ Pet.sleep()
 print(Pet)
 '''
 
-# VirtualPet class simulating a digital pet with energy and hunger management
+
 class VirtualPet:
-    """A virtual pet that can play, eat, and sleep.
-    
-    Attributes:
-        name (str): The name of the pet.
-        energy (int): The energy points of the pet, default is 10.
-        hunger (int): The hunger level of the pet, default is 0.
-    """
-    
     def __init__(self, name, energy=10, hunger=0):
-        """Initialize a VirtualPet instance with specified attributes."""
         self.name = name
         self.energy = energy
         self.hunger = hunger
 
     def play(self):
-        """Simulate playing activity. Reduces energy by 2 and increases hunger by 2.
-        Prints a message if the pet is too tired to play.
-        """
         if self.energy < 2:
             print(f"{self.name} is too tired to play!")
         else:
@@ -60,24 +48,18 @@ class VirtualPet:
             self.hunger += 2
 
     def feed(self):
-        """Simulate feeding the pet. Decreases hunger by 3.
-        Prints a message if overfeeding occurs and resets hunger to 0.
-        """
         self.hunger -= 3
         if self.hunger < 0:
             print(f"{self.name} is overfed!")
             self.hunger = 0
 
     def sleep(self):
-        """Simulate sleeping activity. Increases energy by 10."""
         self.energy += 10
 
     def __str__(self):
-        """Return formatted string representation of the pet's state."""
         return f"{self.name} has {self.energy} energy points and hunger level {self.hunger}"
 
     def __eq__(self, other):
-        """Check equality between two VirtualPet instances based on all attributes."""
         return (isinstance(other, VirtualPet) and
                 self.name == other.name and
                 self.energy == other.energy and
