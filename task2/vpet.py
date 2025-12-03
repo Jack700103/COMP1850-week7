@@ -28,9 +28,7 @@ class VirtualPet:
                 self.name == other.name and
                 self.energy == other.energy and
                 self.hunger == other.hunger)
-    
 
-class VirtualPet:
     def __init__(self, name, tiredness=0, fullness=10):
         self.name = name
         self.tiredness = tiredness  
