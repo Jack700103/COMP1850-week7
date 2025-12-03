@@ -1,4 +1,4 @@
-class VirtualPet:    
+class VirtualPet:
     def __init__(self, name, energy=10, hunger=0):
         self.name = name
         self.energy = energy
