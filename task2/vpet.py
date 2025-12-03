@@ -28,3 +28,21 @@ class VirtualPet:
                 self.name == other.name and
                 self.energy == other.energy and
                 self.hunger == other.hunger)
+    
+
+class Tamagotchi:
+    def __init__(self):
+        self.tiredness = 0
+        self.fullness = 10
+    
+    def play(self):
+        if self.tiredness >= 8:
+            return "Timmy is too tired to play!"  
+        self.tiredness += 2
+        return "Timmy played and is now less tired!"
+    
+    def feed(self):
+        if self.fullness >= 15: 
+            return "Timmy is overfed!"  
+        self.fullness += 5
+        return "Timmy ate and is now more full!"
