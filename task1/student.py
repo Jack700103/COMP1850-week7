@@ -1,74 +1,37 @@
-"""
-Student class implementation for COMP1850 Worksheet 1.7, Task 1.1.
-This module defines a Student class with basic student information and display functionality.
-"""
-
 class Student:
-    """A class representing a student with name and student ID."""
+    """
+    Represents a student with unique ID, name and email.
+
+    Attributes:
+        id (str): Student identification number
+        name (str): Full name of the student
+        email (str): Institutional email address
+    """
     
-    def __init__(self, name, student_id):
+    def __init__(self, id, name, email):
         """
-        Initialize a Student object with name and student ID.
+        Initialize Student instance with provided details.
         
         Args:
-            name (str): The student's name
-            student_id (str): The student's unique identifier
+            id (str): Student ID
+            name (str): Student name
+            email (str): Contact email
         """
+        self.id = id
         self.name = name
-        self.student_id = student_id
-    
+        self.email = email
+
     def print_details(self):
         """
-        Print the details of the student in a formatted way.
-        
-        Outputs:
-            Prints student name and ID to the console
-        """
-        print(f"Student Name: {self.name}")
-        print(f"Student ID: {self.student_id}")
-    
-    def __str__(self):
-        """
-        Return a string representation of the student.
+        Generate formatted string containing student details.
         
         Returns:
-            str: A formatted string containing student information
+            str: Formatted details in 'ID: [id], Name: [name], Email: [email]' format
         """
-        return f"Student: {self.name} (ID: {self.student_id})"
+        return f'Id: {self.id}, Name: {self.name}, Email: {self.email}'
 
+student_1 = Student("xnct0258","John Smith", "johnsmith@leeds.ac.uk")
+print(student_1.print_details())  
 
-def main():
-    """
-    Main function to demonstrate the Student class functionality.
-    Creates multiple student objects and calls their print_details methods.
-    """
-    student1 = Student("John Doe", "S12345")
-    student2 = Student("Jane Smith", "S67890")
-    student3 = Student("Alex Johnson", "S24680")
-
-    print("=" * 40)
-    print("STUDENT INFORMATION")
-    print("=" * 40)
-    
-    print("\nStudent 1:")
-    student1.print_details()
-    
-    print("\n" + "-" * 40)
-    print("Student 2:")
-    student2.print_details()
-    
-    print("\n" + "-" * 40)
-    print("Student 3:")
-    student3.print_details()
-    
-    print("\n" + "=" * 40)
-    print("USING __str__ METHOD")
-    print("=" * 40)
-
-    print(f"\nString representation of student1: {student1}")
-    print(f"String representation of student2: {student2}")
-    print(f"String representation of student3: {student3}")
-
-
-if __name__ == "__main__":
-    main()
+student_2 = Student("jytbuwqr","Varia Costantine", "v.constantine@leeds.ac.uk")
+print(student_2.print_details())
