@@ -1,7 +1,10 @@
 class Car:
-    def __init__(self, model, year):  
+    def __init__(self, model, year):
         self.model = model
         self.year = year
 
     def __str__(self):
         return f"Model {self.model} from year {self.year}"
+    
+    def __repr__(self):
+        return f"Car('{self.model}', {self.year})"
